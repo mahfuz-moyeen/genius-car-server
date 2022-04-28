@@ -6,13 +6,12 @@ const { send } = require('express/lib/response');
 const ObjectId = require('mongodb').ObjectId;
 const jwt = require('jsonwebtoken');
 
-
-const app = express();
 const port = process.env.PROT || 5000;
+const app = express();
 
 // middleware
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // verifyJWT  login token function 
 function verifyJWT(req, res, next) {
